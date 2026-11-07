@@ -1,101 +1,47 @@
-# Project ROLL — Prototype Design Notes
+# Project ROLL — Technical Design Reference
 
-These notes provide the evolving technical reference for **one experimental DIY prototype**, within the project scope defined in the [README](README.md). They describe requirements and options, **not a finalized design**. No component, sensor, dimension, or performance specification has been selected or validated here.
+This document owns **system architecture and integration considerations**, not detailed requirements, safety assessments, candidate evaluations, prototype build histories, or test results. See the [project purpose](README.md), [requirements](docs/requirements.md), [safety assessment](docs/safety.md), and [decision register](docs/decisions.md) for those records. The design remains experimental; no specific board, sensor, LED, enclosure, or battery has been selected or validated on `main`.
 
-## Intended behavior
-
-A scent-detection dog wears the Roll around its neck. When the dog finds a target scent, it retrieves the Roll in its mouth and returns to its handler. The electronics should recognize deliberate retrieval and illuminate LEDs, adding a visible indication without changing the dog's trained behavior.
-
-Proposed functional flow:
+## Functional architecture
 
 ```text
-Dog retrieves Roll
-        ↓
-Retrieval sensor / detection circuit
-        ↓
-Simple logic or microcontroller (if needed)
-        ↓
-LEDs illuminate
-        ↓
-Reset / return to standby (behavior TBD)
+Roll retrieval
+      ↓
+Sensor / sensing interface
+      ↓
+Microcontroller (Arduino-class or similar)
+      ↓
+LED output / driver
+      ↓
+Visible indication
 ```
 
-A compact battery powers the system. Power protection and current limiting must be appropriate to the selected parts.
+A compact battery powers the electronics. Signal timing and reset behavior require further definition in [requirements](docs/requirements.md). The commitment to a microcontroller-based approach is recorded in [DEC001](docs/decisions.md#dec001--microcontroller-based-control).
 
-## Design constraints
+## Electrical and firmware integration
 
-| Area | Requirement or current position |
-| --- | --- |
-| Form | Practical cylinder, with dimensions derived from the existing Roll. |
-| Detection | Recognize mouth retrieval; avoid unacceptable triggers from ordinary movement, impacts, contact, or moisture. |
-| Visual signal | Clearly visible LEDs; color, count, brightness, timing, and reset TBD. |
-| Power | Compact battery; standby/active current and runtime to be measured. |
-| Build | Affordable, available parts; simple wiring, modification, and troubleshooting. |
-| Environment | Evaluate saliva, rain, vibration, impacts, and enclosure integrity. |
-| Dog safety | No accessible battery/electronics, loose small parts, sharp edges, overheating, or hazardous neck attachment. |
-| Scope | DIY proof of concept; no commercial finish or manufacturing optimization. |
-
-## Candidate detection methods
-
-| Method | Potential advantage | Main question to test |
-| --- | --- | --- |
-| Pressure-sensitive or mechanical switch | Direct response to an applied grip/load | Can it distinguish a mouth grip from other contact while staying protected? |
-| Capacitive sensing | Potentially no external moving mechanism | How reliably does it work around saliva, rain, and nearby materials? |
-| Accelerometer | Entire sensor can sit inside a closed enclosure | Can ordinary motion be separated from deliberate retrieval? |
-| Combined sensors | May reduce ambiguous triggers | Is any improvement worth the added complexity and power draw? |
-
-**Decision rule:** select through simple repeatable bench tests. Motion alone should not be assumed to prove retrieval.
-
-## DIY prototyping approach
-
-- Prefer inexpensive, readily available components and straightforward DIY fabrication.
-- Use breadboards, modular parts, and development boards during early off-dog bench experiments when they make wiring, substitution, and troubleshooting easier.
-- Do not treat breadboard assemblies or exposed, loosely mounted electronics as dog-safe: secure and protect the power source, wiring, and components before any supervised animal evaluation.
-- Use a multimeter and other basic DIY tools for power measurements and fault finding. Explain how to take measurements and interpret unexpected results.
-
-## Electronics and LED subsystem
-
-- Choose the simplest controller or non-programmable logic that meets the detection and signaling requirements.
-- Check sensor interface levels, supply voltage, LED current, and battery capacity using component datasheets.
-- Include suitable LED current limiting and necessary electrical/battery protection.
-- Begin with straightforward on/off signaling; test whether a timed, flashing, or latched signal is useful before adding it.
-- If firmware is needed, keep it readable and adjustable for detection thresholds, filtering, LED duration/reset, and low-power operation.
-- Produce a parts list, wiring diagram, relevant calculations, and a documented build before integration.
-
-No specific board, LED, chemistry, or sensor is designated as the default.
+- Choose a controller board and interfaces that can read the selected sensor configuration and drive the LED output safely.
+- Check sensor logic levels, supply voltages, LED current, power protection, and battery capacity against actual component data.
+- Provide LED current limiting and any suitable driver or electrical protection required by the selected parts.
+- Begin with straightforward on/off behavior; only add timing, flashing, latching, or filtering when a testable need is identified.
+- Keep firmware readable and configurable for sensing thresholds, filtering, indication duration/reset, and low-power operation.
+- Document the actual controller, BOM, wiring, pin assignments, firmware revision, and configuration in the relevant [prototype revision](prototypes/README.md).
 
 ## Mechanical integration
 
-- Measure the existing Roll before choosing enclosure dimensions.
-- Plan internal space for the sensor, battery, controller (if needed), LEDs, wiring, and secure mounts.
-- Explore DIY materials and 3D printing for a simple, modifiable cylindrical enclosure.
-- Consider how the housing affects sensing, light visibility, sealing, attachment, and access for modifications.
-- Evaluate bite exposure, impacts, saliva/rain ingress, snagging, and whether any components could loosen or become accessible.
-- Test electrical behavior again after enclosure assembly: packaging can change sensor performance.
+- Measure the existing Roll before finalizing enclosure geometry.
+- Reserve space for sensing modules, controller, battery, LEDs, wiring, and secure internal mounting.
+- Explore simple modifiable enclosure techniques, including 3D printing if useful.
+- Account for how mounting, housing materials, sealing, and LED windows affect sensing and visibility.
+- Repeat functional tests after enclosing the electronics; integration can change sensor response.
+- Keep build-specific drawings, dimensions, and assembly instructions with the [prototype revision](prototypes/README.md). Safety hazards and prerequisites belong in [docs/safety.md](docs/safety.md).
 
-## Verification plan
+## Open integration questions
 
-Use repeatable bench and handling tests before any supervised dog training.
+- Which electrical interfaces and available pins are needed by the selected sensor modules?
+- What controller form factor fits once the actual Roll dimensions are measured?
+- How should the circuit implement the indication and reset behavior defined in requirements?
+- What mounting geometry preserves sensor performance and LED visibility?
+- What practical power and maintenance interfaces are needed for the final enclosure?
 
-| Test area | Measurements or observations | Acceptance threshold |
-| --- | --- | --- |
-| Detection | Successful activations, misses, response delay, false alarms, sensitivity | TBD |
-| LEDs | Visibility, brightness, activation timing, reset behavior | TBD |
-| Power | Standby/active current, estimated and measured runtime | TBD |
-| Mechanical | Attachment security, impact tolerance, integrity, vibration effects | TBD |
-| Environment | Effects of moisture, saliva-like exposure, and rain on operation | TBD |
-| Safety | Battery retention, component security, fault/heat checks, bite and attachment hazards | Safety review required before dog exposure |
-
-Record the prototype version, setup, number of trials, results, deviations, and changes. Use basic tools such as a multimeter where practical. Treat measured outcomes separately from estimates.
-
-## Open decisions
-
-1. Existing Roll dimensions, attachment method, and actual handling loads.
-2. Chosen retrieval sensor and how to reject false triggers.
-3. LED placement and required visibility in different lighting.
-4. Activation duration and reset behavior.
-5. Battery choice and target runtime.
-6. Enclosure material, sealing strategy, and safe access for maintenance.
-7. Quantitative test criteria and conditions for supervised dog evaluation.
-
-Next actions are tracked in the [roadmap](roadmap.md). Changes to these notes should reflect measurements and tested choices rather than assumptions.
+Use [technology evaluations](docs/evaluations/README.md) for competing sensor approaches; [test records](tests/README.md) for evidence; [decisions](docs/decisions.md) for selected solutions and rationale; and the [roadmap](roadmap.md) for the work plan.
