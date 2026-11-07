@@ -22,6 +22,6 @@ This is an experimental DIY project, **not a commercial product**. Sensor choice
 
 ## Project documents
 
-- [Baseline instructions](baseline_instructions.md) — original project instructions; authoritative baseline.
-- [Roadmap](roadmap.md) — proposed prototype phases and validation milestones.
-- [Design notes](design.md) — requirements, candidate approaches, and open technical decisions.
+- [Design notes](design.md) — technical requirements, candidate approaches, and open decisions.
+- [Roadmap](roadmap.md) — proposed development phases and validation milestones.
+- [Agent instructions](AGENTS.md) — contribution rules and the mandatory `agent_main` branch policy for AI assistance.
