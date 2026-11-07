@@ -1,6 +1,6 @@
 # Project ROLL — Prototype Design Notes
 
-These notes expand the [baseline instructions](baseline_instructions.md) into a working design reference for **one experimental DIY prototype**. They describe requirements and options, **not a finalized design**. No component, sensor, dimension, or performance specification has been selected or validated here.
+These notes provide the evolving technical reference for **one experimental DIY prototype**, within the project scope defined in the [README](README.md). They describe requirements and options, **not a finalized design**. No component, sensor, dimension, or performance specification has been selected or validated here.
 
 ## Intended behavior
 
@@ -45,6 +45,13 @@ A compact battery powers the system. Power protection and current limiting must 
 | Combined sensors | May reduce ambiguous triggers | Is any improvement worth the added complexity and power draw? |
 
 **Decision rule:** select through simple repeatable bench tests. Motion alone should not be assumed to prove retrieval.
+
+## DIY prototyping approach
+
+- Prefer inexpensive, readily available components and straightforward DIY fabrication.
+- Use breadboards, modular parts, and development boards during early off-dog bench experiments when they make wiring, substitution, and troubleshooting easier.
+- Do not treat breadboard assemblies or exposed, loosely mounted electronics as dog-safe: secure and protect the power source, wiring, and components before any supervised animal evaluation.
+- Use a multimeter and other basic DIY tools for power measurements and fault finding. Explain how to take measurements and interpret unexpected results.
 
 ## Electronics and LED subsystem
 

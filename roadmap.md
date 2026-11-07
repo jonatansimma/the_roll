@@ -1,6 +1,6 @@
 # Project ROLL — DIY Prototype Roadmap
 
-This roadmap turns the [baseline instructions](baseline_instructions.md) into practical milestones. It is a **proposed plan**, not a record of completed work. The project's scope is one functional DIY prototype, not a finished commercial product.
+This roadmap organizes the development milestones for the [Project ROLL](README.md) prototype, using the technical requirements in [design.md](design.md). It is a **proposed plan**, not a record of completed work. The project's scope is one functional DIY prototype, not a finished commercial product.
 
 **Working method:** build → test → troubleshoot → improve.
 
@@ -44,7 +44,7 @@ This roadmap turns the [baseline instructions](baseline_instructions.md) into pr
 
 ## 5. Integrate
 
-**Baseline instruction:** “Package electronics in a simple cylinder; repeat testing.”
+**Integration objective:** Package electronics in a simple cylinder; repeat testing.
 
 - [ ] Lay out the sensor, battery, wiring, and LEDs inside a practical cylindrical enclosure.
 - [ ] Plan attachment, sealing, assembly access, and secure retention of every component.
@@ -55,7 +55,7 @@ This roadmap turns the [baseline instructions](baseline_instructions.md) into pr
 
 ## 6. Validate
 
-**Baseline instruction:** “Run bench, handling, and environmental tests. Only then, after safety checks, evaluate in carefully supervised dog training. Improve from results.”
+**Validation objective:** Run bench, handling, and environmental tests. Only then, after safety checks, evaluate in carefully supervised dog training. Improve from results.
 
 - [ ] Repeat controlled detection tests and count hits, misses, and false activations.
 - [ ] Check LED brightness, visibility, timing, and reset.

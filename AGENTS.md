@@ -21,20 +21,22 @@ Use the existing repository as the **sole source of truth for project decisions 
 
 ## How to interpret the documents
 
-Read the relevant files before proposing or implementing changes:
+Read the relevant documents before proposing or implementing changes. Each has authority for its own subject:
 
-1. **[baseline_instructions.md](baseline_instructions.md) — authoritative project baseline.** Defines the DIY scope, testing expectations, documentation standards, safety priorities, and success criteria. Preserve its exact text unless the maintainer explicitly requests an edit; any permitted edit still belongs only on `agent_main`.
-2. **[design.md](design.md) — evolving technical reference.** Describes functional intent, constraints, candidate sensor/electronics approaches, test considerations, and open decisions. Treat unselected options, `TBD` entries, and proposed designs as **unverified**, not as final specifications.
-3. **[roadmap.md](roadmap.md) — planned work, not evidence of completion.** Its phases and checkboxes organize proposed experiments and deliverables. Mark work complete only with supporting implementation or test evidence.
-4. **[README.md](README.md) — short public project overview.** Keep it accurate and accessible, with links to the more detailed documents. It is not a substitute for the baseline or design notes.
-5. **This AGENTS.md — agent operating rules.** In particular, its `agent_main`-only rule is unconditional for agent actions.
+1. **[README.md](README.md) — project purpose, scope, and success criteria.** Keep this concise and accurate. The goal is one working DIY prototype, not a commercial product.
+2. **[design.md](design.md) — technical requirements and evolving design reference.** Use it for constraints, sensing/electronics options, safety considerations, and technical decisions. Treat unselected options, `TBD` entries, and proposed designs as **unverified**, not final specifications.
+3. **[roadmap.md](roadmap.md) — development plan and milestones.** Its phases and unchecked tasks are proposals, not evidence of completed work. Mark tasks complete only with supporting implementation or test results.
+4. **This AGENTS.md — agent operating rules and repository workflow.** Its `agent_main`-only rule is unconditional for agent actions.
 
-If documents appear inconsistent, preserve the baseline's intent, flag the discrepancy, and propose a correction on `agent_main`; do not silently reinterpret the requirements. Do not invent missing baseline sections or claim a proposal has been accepted.
+No single file overrides every other file: use the appropriate document for each kind of decision. If documents conflict, identify the inconsistency and propose a correction on `agent_main` rather than silently overriding requirements. Do not discard safety constraints or claim that untested ideas are established decisions.
 
 ## Engineering and safety expectations
 
 - Follow **build → test → troubleshoot → improve**. Prefer simple, affordable, available DIY parts and small bench experiments before integrated designs.
 - Compare alternatives and explain trade-offs; do not select sensors, dimensions, batteries, or LED behavior by assumption.
+- Recommend specific, compatible component models when useful; explain why they fit, provide alternatives, check datasheets when available, and distinguish essential parts from optional enhancements. Include bills of materials when appropriate.
+- Challenge unnecessarily complex, unreliable, impractical, or unsafe proposals and suggest simpler ways to test the intended function.
+- Ask focused questions when missing information materially affects a design or safety decision; otherwise state reasonable assumptions clearly and proceed.
 - Use metric/SI units. Check voltage/current limits, battery safety, and component compatibility against datasheets when possible.
 - Consider false activations, missed retrievals, moisture, vibration, impacts, visibility, power draw, and enclosure effects.
 - **Test off the dog first.** Never recommend live-dog use until appropriate mechanical and electrical safety checks have been completed; pay special attention to battery containment, loose parts, bite exposure, sharp edges, heat, and neck-attachment hazards.
@@ -43,7 +45,7 @@ If documents appear inconsistent, preserve the baseline's intent, flag the discr
 
 ## Change workflow
 
-1. Read the baseline plus the documents relevant to the task; check the current state of `agent_main`.
+1. Read the documents relevant to the task and check the current state of `agent_main`.
 2. Make only changes needed for the requested task. Avoid unrelated formatting, renames, broad refactors, or new features.
 3. Keep documentation aligned: record chosen components, dimensions, decisions, assumptions, wiring/firmware changes, test methods, and actual results in the appropriate files.
 4. Run available checks or tests when practical, and report what was and was not verified. Never manufacture test outcomes.
