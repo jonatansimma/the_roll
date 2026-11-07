@@ -1,78 +1,58 @@
 # Project ROLL — DIY Prototype Roadmap
 
-This roadmap organizes the development milestones for the [Project ROLL](README.md) prototype, using the technical requirements in [design.md](design.md). It is a **proposed plan**, not a record of completed work. The project's scope is one functional DIY prototype, not a finished commercial product.
+This is a **proposed plan**, not a record of completed work. Milestones should be marked complete only when supported by linked build or [test evidence](tests/README.md). The overall objective is defined in [README.md](README.md); detailed acceptance targets belong in [requirements](docs/requirements.md).
 
-**Working method:** build → test → troubleshoot → improve.
+## 1. Define use case and constraints
 
-## 1. Define the use case and constraints
+- [ ] Measure the existing Roll's length, diameter, mass, and attachment; record findings in [requirements](docs/requirements.md).
+- [ ] Observe the existing trained retrieval behavior without putting an electronic prototype on the dog.
+- [ ] Document exposure conditions and intended LED activation/reset behavior in [requirements](docs/requirements.md).
+- [ ] Define measurable targets and proposed pass/fail conditions before validation.
 
-- [ ] Measure the current Roll's length, diameter, weight, and neck attachment.
-- [ ] Observe how the dog grips and retrieves it, without testing an electronic prototype on the dog.
-- [ ] Identify expected exposure to saliva, rain, impacts, and vibration.
-- [ ] Decide what the LED signal should do: when it starts, how it stops/resets, and when it must be visible.
-- [ ] Record initial measurable targets for detection, false alarms, visibility, battery runtime, and size.
+**Deliverable:** completed initial requirements and known unknowns.
 
-**Output:** a short requirements sheet with measurements, assumptions, unresolved questions, and proposed pass/fail criteria.
+## 2. Evaluate retrieval detection
 
-## 2. Explore retrieval detection
+- [ ] Compare candidate sensing methods in [evaluations](docs/evaluations/README.md).
+- [ ] Plan and conduct repeatable bench experiments with simulated retrieval and ordinary handling.
+- [ ] Document observations and measurements as [test runs](tests/README.md).
+- [ ] Record the evidence-based approach selection in [decisions](docs/decisions.md).
 
-- [ ] Compare pressure/mechanical switches, capacitive sensing, accelerometers, and combinations where justified.
-- [ ] Bench-test promising candidates separately with simulated retrieval and ordinary movement/contact.
-- [ ] Investigate false triggers, missed detections, sensor sensitivity, and effects of moisture.
-- [ ] Compare power use, wiring complexity, and mechanical integration.
+**Deliverable:** linked evaluation and test evidence supporting a proposed sensing choice.
 
-**Output:** test results and a reasoned choice of sensor approach. Do not assume a particular sensor is proven before testing.
+## 3. Build basic electronics
 
-## 3. Build the basic electronics
+- [ ] Select an appropriate microcontroller board, sensor modules, LED output, and power arrangement.
+- [ ] Document the circuit, BOM, firmware, and build method in a [prototype revision](prototypes/README.md).
+- [ ] Assemble an accessible bench prototype.
+- [ ] Demonstrate basic sensor-to-LED operation away from the dog and record the result.
 
-- [ ] Select readily available sensor, LEDs, power source, and the simplest suitable controller, if one is needed.
-- [ ] Draw a wiring diagram and record relevant voltage/current ratings.
-- [ ] Assemble a workbench prototype using accessible DIY tools.
-- [ ] Implement basic sensor-to-LED behavior; document any firmware and required libraries.
-- [ ] Verify operation without a dog.
-
-**Output:** reproducible wiring, a parts list, and a functioning bench demonstration.
+**Deliverable:** reproducible bench build with a linked test run.
 
 ## 4. Troubleshoot and refine
 
-- [ ] Measure detection success, activation delay, missed detections, and false alarms in repeated trials.
-- [ ] Adjust thresholds, filtering, and LED timing/reset behavior if needed.
-- [ ] Measure standby and active current; estimate and then test battery runtime.
-- [ ] Record failures, changes, and repeat-test results.
+- [ ] Execute repeatable detection, false-activation, and power tests using documented procedures.
+- [ ] Investigate failures and adjust hardware or code as needed.
+- [ ] Preserve relevant configurations and results; apply the [prototype identity/revision rules](prototypes/README.md).
+- [ ] Compare new runs against the defined acceptance criteria.
 
-**Output:** a stable bench prototype and documented results against the selected criteria.
+**Deliverable:** documented improvements and evidence for the current bench prototype.
 
 ## 5. Integrate
 
-**Integration objective:** Package electronics in a simple cylinder; repeat testing.
+- [ ] Package the electronics in a modifiable cylinder and record the build artifacts.
+- [ ] Resolve attachment, assembly, sealing, and maintainability questions.
+- [ ] Re-run applicable procedures with the assembled enclosure.
 
-- [ ] Lay out the sensor, battery, wiring, and LEDs inside a practical cylindrical enclosure.
-- [ ] Plan attachment, sealing, assembly access, and secure retention of every component.
-- [ ] Use simple DIY fabrication or 3D printing as useful.
-- [ ] Repeat detection, LED, and power tests with the electronics enclosed.
-
-**Output:** an assembled Roll prototype and updated drawings, dimensions, and wiring.
+**Deliverable:** integrated prototype revision with assembly records and associated runs.
 
 ## 6. Validate
 
-**Validation objective:** Run bench, handling, and environmental tests. Only then, after safety checks, evaluate in carefully supervised dog training. Improve from results.
+- [ ] Perform bench, handling, environmental, performance, and power checks against [requirements](docs/requirements.md).
+- [ ] Complete and record the [safety gate](docs/safety.md) before considering any supervised dog evaluation.
+- [ ] If the gate is met, evaluate in carefully supervised training, recording behavioral interference and any unexpected events.
+- [ ] Record limitations, findings, decisions, and necessary follow-up revisions.
 
-- [ ] Repeat controlled detection tests and count hits, misses, and false activations.
-- [ ] Check LED brightness, visibility, timing, and reset.
-- [ ] Verify active/standby consumption and measured battery runtime.
-- [ ] Test attachment, impacts, vibration, enclosure integrity, and moisture exposure.
-- [ ] Inspect battery containment, bite exposure, loose parts, electrical faults, and temperature before any live-dog evaluation.
-- [ ] If safe to proceed, evaluate in carefully supervised training and record whether the Roll interferes with normal behavior.
-- [ ] Revise the design from measured results.
+**Deliverable:** traceable validation runs and remaining issues, not an unsupported claim of completion.
 
-**Output:** a test report with pass/fail results, limitations, and next changes.
-
-## Test record template
-
-For each test, record: **prototype version · setup/conditions · method · number of trials · measured result · acceptance criterion · pass/fail · observed issues · next action**.
-
-Use metric/SI units. Keep estimates separate from measurements and mark untested ideas clearly.
-
-## Prototype completion criterion
-
-The DIY Roll detects deliberate mouth retrieval, activates visible LEDs, avoids unacceptable false signals, runs from a compact battery, fits a cylindrical enclosure, and can be evaluated and improved without unacceptable risks to the dog. Specific numerical thresholds remain **TBD until requirements are defined**.
+Use [test procedures and test runs](tests/README.md) for methods, record formats, and results; do not embed a competing test template in this roadmap.
