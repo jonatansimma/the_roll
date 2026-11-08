@@ -51,6 +51,16 @@ All experiments are **proposals**, not executed work. Create and link reusable [
 | Retrieval detection, LED visibility and false-trigger performance | **Unknown** | No sensor/LED configuration or test run |
 | “4 MB” vs “4 Mb” flash notation | **Unresolved documentation discrepancy** | Retailer description vs Luxorparts datasheet |
 
+## Requirement-fit review — 2026-11-08 (desk assessment)
+
+Reviewed against the [current requirements on `main`](../requirements.md), especially [body, attachment, and mass](../requirements.md#dimensional-and-mass-targets) and [battery operating time](../requirements.md#operating-time-requirements). This is a candidate assessment, **not compliance or hardware validation**.
+
+- **Physical integration (REQ005):** The published 34.2 × 25.6 mm board footprint is smaller than the allowable cylinder's length and outer diameter; it is **plausible** for axial mounting. Clearance for the complete controller, connectors, battery, enclosure walls, LEDs, sensor and attachment is **unverified**. The board's published 3 g mass alone does not prove whole-assembly mass compliance.
+- **Function (REQ001–REQ003):** GPIO and programmable logic can interface to a proposed retrieval sensor and a correctly rated LED driver. Deliberate-retrieval detection, false-trigger behavior and handler-visible indication are **unverified**.
+- **Operating time (REQ004):** Neither the mandatory minimum nor preferred runtime is established: full-board active/idle/LED current and usable battery energy have not been measured. ESP8266 chip sleep figures cannot establish system-level runtime.
+- **Safety/exposure (REQ006–REQ009):** Electrical, thermal, moisture, impact and animal-exposure checks are outstanding; see [safety gate](../safety.md).
+- **Classification:** **Plausible controller candidate; does not yet demonstrate compliance.** Requires a complete packaging/power budget and off-dog tests.
+
 ## Conclusion and next action
 
 - **Assessment:** **Promising for a first bench controller; requires more evidence** for battery-powered integrated use.
