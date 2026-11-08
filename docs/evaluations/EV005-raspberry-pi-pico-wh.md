@@ -69,6 +69,16 @@ These are **proposed procedures, not completed tests**. Create actual [test proc
 | Internal buck-boost produces 3.3 V from a broad VSYS input range; does not supply lithium charging/protection | **Published circuit information / integration inference** | [Official Pico W datasheet, powerchain/charging sections](https://pip-assets.raspberrypi.com/categories/686-raspberry-pi-pico-w/documents/RP-008312-DS/pico-w-datasheet.pdf) |
 | Board condition, whole-system power, achieved 1 h/12 h runtime, mass, water/impact resistance, false positives and 3D fit | **Unknown / untested** | No test runs, complete BOM or measured configuration |
 
+## Requirement-fit review — 2026-11-08 (desk assessment)
+
+Compared with the [current canonical requirements](../requirements.md), including [round-cylinder dimensions and mass](../requirements.md#dimensional-and-mass-targets) and [minimum/preferred runtime](../requirements.md#operating-time-requirements).
+
+- **Physical integration (REQ005):** The published **51 × 21 mm** PCB is plausibly narrow/short enough to mount axially, but **pre-soldered headers, SWD connector, wiring, enclosure walls, battery and attachment** make the assembled 3D fit and total mass **unverified**.
+- **Retrieval and LED function (REQ001–REQ003):** Interfaces can accommodate an external 3.3 V-compatible sensor and suitably driven LEDs. There is **no on-board accelerometer**; extra hardware is required for motion-sensing trials. No detection/visibility testing exists.
+- **Operating time (REQ004):** VSYS input flexibility does not establish runtime. Whole-board power, external sensor/LED loads, battery usable energy and low-power sensing strategy require measurement against both runtime targets.
+- **Safety/exposure (REQ006–REQ009):** No integrated enclosure, charging protection, handling/moisture checks or completed safety gate are documented.
+- **Classification:** **Plausible controller candidate for off-dog tests; no demonstrated compliance of the final prototype.**
+
 ## Conclusion and next action
 
 - **Assessment:** **Promising as a general-purpose off-dog controller; requires more evidence before selection or integration.**
