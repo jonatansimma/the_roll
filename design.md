@@ -29,7 +29,7 @@ A compact battery powers the electronics. Signal timing and reset behavior requi
 
 ## Mechanical integration
 
-- Measure the existing Roll before finalizing enclosure geometry.
+- Use the [physical reference, body envelope, attachment requirement, and mass target](docs/requirements.md#dimensional-and-mass-targets) when planning the enclosure; assess feasibility before finalizing geometry.
 - Reserve space for sensing modules, controller, battery, LEDs, wiring, and secure internal mounting.
 - Explore simple modifiable enclosure techniques, including 3D printing if useful.
 - Account for how mounting, housing materials, sealing, and LED windows affect sensing and visibility.
@@ -39,7 +39,7 @@ A compact battery powers the electronics. Signal timing and reset behavior requi
 ## Open integration questions
 
 - Which electrical interfaces and available pins are needed by the selected sensor modules?
-- What controller form factor fits once the actual Roll dimensions are measured?
+- What controller form factor and internal packing scheme can meet the [specified body envelope](docs/requirements.md#dimensional-and-mass-targets)?
 - How should the circuit implement the indication and reset behavior defined in requirements?
 - What mounting geometry preserves sensor performance and LED visibility?
 - What practical power and maintenance interfaces are needed for the final enclosure?
