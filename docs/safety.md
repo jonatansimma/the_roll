@@ -12,7 +12,7 @@ This is the single authoritative location for **hazards, proposed mitigations, a
 | Temperature and electrical faults | Overheating during operation, charging (if applicable), or faults | Correct ratings, current limiting, insulation, fault and temperature checks |
 | Moisture / saliva / rain | Ingress, electrical malfunction, corrosion and sensing changes | Enclosure sealing strategy; controlled exposure and post-test inspections |
 | Mechanical loads and impacts | Cracking, loosened parts, or loss of enclosure integrity | Practical impact, retention and handling inspections |
-| Neck attachment | Snagging, entanglement, unintended loading or release failure | Attachment assessment based on the existing Roll and handling conditions |
+| Neck attachment | Snagging, entanglement, unintended loading or release failure; strength and retention of the carried-over attachment loop | Assessment based on the existing Roll and relevant handling conditions |\n| Increased prototype mass | Effects of additional mass on handling, comfort, impact forces and trained retrieval | Evaluate the [mass target](requirements.md#dimensional-and-mass-targets) and actual assembly mass; reassess before dog exposure |
 | Altered dog behavior | Interference with trained retrieval, comfort, or handling | Only a supervised assessment after physical/electrical clearance |
 
 These mitigations are suggestions to investigate, **not approved or tested solutions**. Selected controls and remaining risks must be linked to the actual configuration.

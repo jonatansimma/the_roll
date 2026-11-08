@@ -4,7 +4,7 @@ This is a **proposed plan**, not a record of completed work. Milestones should b
 
 ## 1. Define use case and constraints
 
-- [ ] Measure the existing Roll's length, diameter, mass, and attachment; record findings in [requirements](docs/requirements.md).
+- [x] Record the owner's initial dimensions, mass and attachment description of the existing Roll in [requirements](docs/requirements.md#dimensional-and-mass-targets) (user-reported; not independently verified).\n- [ ] Confirm reference dimensions and attachment details as needed, and evaluate whether the proposed body and mass limits are feasible.
 - [ ] Observe the existing trained retrieval behavior without putting an electronic prototype on the dog.
 - [ ] Document exposure conditions and intended LED activation/reset behavior in [requirements](docs/requirements.md).
 - [ ] Define measurable targets and proposed pass/fail conditions before validation.
@@ -40,7 +40,7 @@ This is a **proposed plan**, not a record of completed work. Milestones should b
 
 ## 5. Integrate
 
-- [ ] Package the electronics in a modifiable cylinder and record the build artifacts.
+- [ ] Package the electronics in a modifiable cylinder within the [defined physical limits](docs/requirements.md#dimensional-and-mass-targets) and record the build artifacts.
 - [ ] Resolve attachment, assembly, sealing, and maintainability questions.
 - [ ] Re-run applicable procedures with the assembled enclosure.
 
