@@ -7,7 +7,7 @@
 
 ## Objective and operating principle
 
-Evaluate Kjell & Company article **87924**, a **single-cell flat-pouch lithium-polymer battery**, as the energy store for off-dog controller/sensor/LED tests and potentially an integrated Roll. A rechargeable Li-Po battery supplies a varying cell voltage; it does **not** directly provide regulated 3.3 V or 5 V rails or a safe charging system.
+Evaluate Kjell & Company article **87924**, a **single-cell flat-pouch lithium-polymer battery**, as an energy store for off-dog controller/sensor/LED tests, and assess whether its dimensions permit integration within the current Roll envelope. A rechargeable Li-Po battery supplies a varying cell voltage; it does **not** directly provide regulated 3.3 V or 5 V rails or a safe charging system.
 
 ## Candidate components and sources
 
@@ -50,7 +50,8 @@ These are **proposals**, not completed tests; use [documented procedures and run
 | Nominal 3.7 V, 1200 mAh, 4.2 V charge, 1.2 A limits, dimensions 63 × 36 × 4.7 mm and mass 23.3 g | Published specification (not measured) | [Product specification](https://www.kjell.com/se/produkter/el-verktyg/elektronik/arduino/arduino-tillbehor/luxorparts-li-po-batteri-37-v-med-kontakt-1200-mah-p87924) |
 | Nominal stored energy **4.44 Wh** | **Calculated estimate** | 3.7 V × 1.2 Ah (published nominal values) |
 | Approx. **7.1 h** for *hypothetical* 0.50 W load and 80% efficiency | **Illustrative estimate, not measured or predicted runtime** | 4.44 Wh × 0.8 / 0.50 W |
-| Physical fit, real usable capacity, internal protection features, safe charging with proposed shield | **Unknown** | No direct inspection, verified wiring or test run |
+| Nominal-envelope fit is **incompatible** (cell width exceeds the permitted external diameter); possible exceptional redesign remains unproven | **Derived incompatibility from published cell dimensions and canonical design limits** | [Published battery dimensions](https://www.kjell.com/se/produkter/el-verktyg/elektronik/arduino/arduino-tillbehor/luxorparts-li-po-batteri-37-v-med-kontakt-1200-mah-p87924); [physical requirements](../requirements.md#dimensional-and-mass-targets) |
+| Real usable capacity, internal protection features and safe charging with proposed shield | **Unknown** | No direct inspection, verified wiring or test run |
 | Potential connector mismatch with article 87296 | **Unresolved compatibility concern** | [EV002 conflict analysis](EV002-luxorparts-battery-shield.md) |
 
 ## Requirement-fit review — 2026-11-08 (desk assessment)
