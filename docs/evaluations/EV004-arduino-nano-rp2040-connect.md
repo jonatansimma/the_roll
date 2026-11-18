@@ -59,6 +59,16 @@ These are **proposed tests only**. Define reproducible [test procedures](../../t
 | Whether onboard IMU can distinguish retrieval from ordinary motion | **Unknown / hypothesis** | No experiment or test run |
 | Current consumption, battery runtime, required LED brightness, cylinder fit, hardware condition | **Unknown** | No physical inspection or test run |
 
+## Requirement-fit review — 2026-11-08 (desk assessment)
+
+Compared against [current requirements](../requirements.md), including [physical limits and total mass](../requirements.md#dimensional-and-mass-targets) and [mandatory/preferred operating times](../requirements.md#operating-time-requirements).
+
+- **Physical integration (REQ005):** The published **45 × 18 mm** PCB is plausibly narrow/short enough for an axial layout, and the stated **6 g** board mass appears compatible with investigating the assembly mass target. **Neither proves** that the with-headers board, battery, enclosure walls, LED and attachment all fit together.
+- **Detection/indication (REQ001–REQ003):** The integrated LSM6DSOX IMU provides a motion-sensor input without a separate motion board, and GPIO can command a properly rated LED driver. Whether motion differentiates deliberate retrieval from other dog/handler movements is **unproven**; LED brightness and false-activation performance are unmeasured.
+- **Operating time (REQ004):** Active, sensing-idle and low-power whole-board consumption have not been measured; no demonstrated compliant battery configuration. Additional radio features do not in themselves satisfy a requirement.
+- **Safety (REQ006, REQ009):** Appropriate power supply, secure mounts, moisture protection, thermal/impact checks, animal-exposure clearance and actual condition of the second-hand board remain unresolved.
+- **Classification:** **Plausible controller candidate, especially for initial IMU experiments; not validated as a compliant assembled Roll.**
+
 ## Conclusion and next action
 
 - **Assessment:** **Promising for exploratory bench work, but requires more evidence before selection or integration.**

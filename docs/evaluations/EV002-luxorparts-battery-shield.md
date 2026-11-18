@@ -54,6 +54,15 @@ All experiments are proposals; log conditions and numerical readings in linked [
 | Optional A0 connection may exceed D1 Mini's 3.2 V maximum unless adequately scaled | **Proposed hazard / unverified circuit detail** | [Shield datasheet](https://www.kjell.com/globalassets/mediaassets/855795_87296_datasheet_en.pdf), [board datasheet](https://www.kjell.com/globalassets/mediaassets/855793_87294_datasheet_en.pdf) |
 | Converter efficiency, current under load, complete cell protection and charger thermal behavior | **Unknown** | No datasheet confirmation for assembled system and no test runs |
 
+## Requirement-fit review — 2026-11-08 (desk assessment)
+
+Compared with [current requirements on `main`](../requirements.md), especially [physical packaging/mass](../requirements.md#dimensional-and-mass-targets) and [operating time](../requirements.md#operating-time-requirements). A power module alone cannot satisfy retrieval-detection or visibility requirements.
+
+- **Physical integration (REQ005):** This shield's exact PCB/header stack footprint, mass, mounting requirements, charger-access clearance and position within a complete Roll are **not recorded or tested**. Compatibility with the [D1 Mini](EV001-luxorparts-wemos-d1-mini.md) does not prove a full cylindrical assembly fits.
+- **Operating time (REQ004):** The specified 5 V / 1 A output is a **power rating, not battery duration**. Boost conversion efficiency, idle consumption, cell cutoff, and complete-system duty cycle are **unknown**; no evidence establishes mandatory or preferred runtime.
+- **Electrical and safety gate (REQ006, REQ009):** Conflicting battery connector specifications, unverified polarity/protection, and potentially unsafe battery-voltage connection to A0 remain **blockers to using the proposed shield-and-cell combination**. No dog-use clearance exists.
+- **Classification:** **Conditional bench power candidate; no demonstrated requirement compliance.** Verify actual connector, circuitry and enclosure geometry before integrating it; do not connect a battery on the basis of these descriptions alone.
+
 ## Conclusion and next action
 
 - **Assessment:** **Requires more evidence; do not connect the proposed cell until connector identity/polarity are verified.**

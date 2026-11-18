@@ -7,7 +7,7 @@
 
 ## Objective and operating principle
 
-Evaluate Kjell & Company article **87924**, a **single-cell flat-pouch lithium-polymer battery**, as the energy store for off-dog controller/sensor/LED tests and potentially an integrated Roll. A rechargeable Li-Po battery supplies a varying cell voltage; it does **not** directly provide regulated 3.3 V or 5 V rails or a safe charging system.
+Evaluate Kjell & Company article **87924**, a **single-cell flat-pouch lithium-polymer battery**, as an energy store for off-dog controller/sensor/LED tests, and assess whether its dimensions permit integration within the current Roll envelope. A rechargeable Li-Po battery supplies a varying cell voltage; it does **not** directly provide regulated 3.3 V or 5 V rails or a safe charging system.
 
 ## Candidate components and sources
 
@@ -20,7 +20,7 @@ The seller gives charging temperature **10–45 °C** and discharging temperatur
 ## Expected advantages, limitations, and uncertainties
 
 - **Expected advantages:** rechargeable, compact in thickness, with a nominal energy content adequate to justify initial run-time experiments. The JST lead avoids direct soldering to a cell.
-- **Geometry concern:** this is a **wide, flat 36 mm** pouch, not a cylindrical cell. Its shape may be inconvenient for a narrow Roll and it must not be bent, crushed, punctured or compressed to fit. Internal Roll dimensions are currently **TBD** in [requirements](../requirements.md); do not assume fit.
+- **Geometry constraint (updated 2026-11-08):** this is a **wide, flat 36 mm** pouch, not a cylindrical cell. The [now-defined nominal maximum round-cylinder diameter](../requirements.md#dimensional-and-mass-targets) is **smaller than the cell width**, before enclosure protection; it must **not** be bent, crushed, punctured or compressed to fit.
 - **Protection concern:** the product page states a **2.4 V undervoltage shutoff**, but the exact physical protection implementation and full overcharge/short-circuit protection are **not verified**. Do not design around deep discharge to 2.4 V without confirming the cell and system requirements. Avoid exposed terminals and uncontrolled high currents.
 - **Compatibility concern:** the listed **JST-PH 2.0 mm** plug may not match the **shield described in [EV002](EV002-luxorparts-battery-shield.md)** because that shield's product listing and datasheet conflict. Physical mating and pin polarity must be checked before any live connection.
 - **Animal safety:** a soft Li-Po pouch is particularly vulnerable to bite/impact puncture, swelling, heat and moisture. This battery is **not appropriate for dog exposure** without verified protective enclosure, electrical checks and the documented [safety gate](../safety.md).
@@ -50,14 +50,25 @@ These are **proposals**, not completed tests; use [documented procedures and run
 | Nominal 3.7 V, 1200 mAh, 4.2 V charge, 1.2 A limits, dimensions 63 × 36 × 4.7 mm and mass 23.3 g | Published specification (not measured) | [Product specification](https://www.kjell.com/se/produkter/el-verktyg/elektronik/arduino/arduino-tillbehor/luxorparts-li-po-batteri-37-v-med-kontakt-1200-mah-p87924) |
 | Nominal stored energy **4.44 Wh** | **Calculated estimate** | 3.7 V × 1.2 Ah (published nominal values) |
 | Approx. **7.1 h** for *hypothetical* 0.50 W load and 80% efficiency | **Illustrative estimate, not measured or predicted runtime** | 4.44 Wh × 0.8 / 0.50 W |
-| Physical fit, real usable capacity, internal protection features, safe charging with proposed shield | **Unknown** | No direct inspection, verified wiring or test run |
+| Nominal-envelope fit is **incompatible** (cell width exceeds the permitted external diameter); possible exceptional redesign remains unproven | **Derived incompatibility from published cell dimensions and canonical design limits** | [Published battery dimensions](https://www.kjell.com/se/produkter/el-verktyg/elektronik/arduino/arduino-tillbehor/luxorparts-li-po-batteri-37-v-med-kontakt-1200-mah-p87924); [physical requirements](../requirements.md#dimensional-and-mass-targets) |
+| Real usable capacity, internal protection features and safe charging with proposed shield | **Unknown** | No direct inspection, verified wiring or test run |
 | Potential connector mismatch with article 87296 | **Unresolved compatibility concern** | [EV002 conflict analysis](EV002-luxorparts-battery-shield.md) |
+
+## Requirement-fit review — 2026-11-08 (desk assessment)
+
+Rechecked against the [specified round-cylinder dimensions, attachment, and mass target](../requirements.md#dimensional-and-mass-targets) and [operating-time targets](../requirements.md#operating-time-requirements).
+
+- **Nominal mechanical compatibility (REQ005): FAIL.** The cell's published **36 mm width already exceeds the nominal maximum 35 mm *external* body diameter**. It cannot be packed into the default round cylinder without deforming the pouch, even before accounting for enclosure wall thickness, protective clearance, wires or retention. **Do not bend, crush or squeeze a Li-Po cell to make it fit.** The exceptional larger envelope is **not** an automatic allowance and cannot be taken as proof of safe fit.
+- **Mass (REQ005):** Its published **23.3 g** uses almost half of the total **50 g target**, leaving **26.7 g** for enclosure, controller, LEDs, sensors, wiring, protection and attachment; a complete mass budget does not exist.
+- **Operating time (REQ004):** Nominal **4.44 Wh** could support benchtop experiments, but without measured current, usable capacity and duty cycle it **does not verify** the mandatory runtime or preferred target. The earlier 7.1 h example uses hypothetical assumptions and must not be treated as a project result.
+- **Safety (REQ006, REQ009):** Pouch damage/puncture and charge/protection concerns remain; the shield connector mismatch is unresolved.
+- **Classification:** **Exclude from the nominal integrated Roll configuration on dimensional grounds; may remain a bench-only test battery.** Consider a narrower protected power source or document and justify a separately assessed exception without assuming it will work.
 
 ## Conclusion and next action
 
-- **Assessment:** **Requires more evidence**; reasonable **bench energy-storage candidate** but unconfirmed geometry and protection make integrated suitability unknown.
-- **Reasoning:** Its nominal energy and supply ratings permit a practical investigation, but the proposed connector combination and mechanical/puncture risks need resolution before use.
-- **Next action / decision link:** Inspect/measure the pack and shield, establish a verified charging/protection arrangement, and perform logged off-dog discharge/current tests. Record a decision only with supporting [evidence](../../tests/README.md) in [decisions](../decisions.md).
+- **Assessment:** **Unsuitable for the nominal integrated Roll** due to the defined external-diameter constraint; remains a **bench-only energy-storage candidate** pending charging/protection verification.
+- **Reasoning:** Its published width exceeds the nominal outside diameter. Forcing a soft lithium pouch into the enclosure is unacceptable; even an exceptional larger geometry would require a separately justified, verified and protected fit. Its nominal energy can still be evaluated on a safe workbench.
+- **Next action / decision link:** Investigate a physically narrower, protected battery for the nominal envelope. If retaining this pack for off-dog experiments, inspect/measure it and the shield, establish verified charging/protection, and log discharge/current tests. Record selections only with supporting [evidence](../../tests/README.md) in [decisions](../decisions.md).
 
 ## References
 
