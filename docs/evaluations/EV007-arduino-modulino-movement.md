@@ -9,7 +9,7 @@
 
 Evaluate **Kjell & Company article 88456 / Arduino part ABX00101**, the **Modulino Movement**, as a candidate sensor for recognizing the Roll's intentional retrieval. It uses STMicroelectronics' **LSM6DSOXTR**, combining three-axis acceleration measurements with three-axis angular-rate measurements (six-axis inertial measurement unit, IMU). Its host controller could process time-series sensor data to detect a proposed retrieval-related pattern and command a separately driven LED output.
 
-**Critical limitation:** This module measures movement, not mouth pressure, grip, saliva, or the dog's decision to retrieve. Running, turning, shaking, impacts and incidental handling can also create large signals. A detection algorithm and representative controlled trials must establish whether there is an adequately distinctive retrieval signature. No sensing approach is selected on \`main\`.
+**Critical limitation:** This module measures movement, not mouth pressure, grip, saliva, or the dog's decision to retrieve. Running, turning, shaking, impacts and incidental handling can also create large signals. A detection algorithm and representative controlled trials must establish whether there is an adequately distinctive retrieval signature. No sensing approach is selected on `main`.
 
 ## Candidate components and sources
 
