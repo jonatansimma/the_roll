@@ -16,6 +16,12 @@ This is the authoritative location for **what the prototype needs to achieve** a
 | REQ008 | Support economical, modifiable DIY experimentation. | Parts availability, budget ceiling, serviceability targets: **TBD**. | Build review |
 | REQ009 | Meet the prerequisites for any supervised dog exposure. | Follow the mandatory assessment and gate in [safety.md](safety.md). | Recorded safety inspection |
 
+## Reported retrieval behavior — design consideration (not a requirement)
+
+**Owner report, 2026-11-22; not independently observed or quantified:** The trained dog grips the existing Roll very lightly. During a return run, the dog sometimes drops the Roll and must pick it up again.
+
+This is **context for sensor evaluation and retrieval-indication behavior**, not a new requirement, minimum bite-force specification, measured force, acceptance threshold, or evidence of prototype performance. Bench investigations should consider whether gentle mouth contact can be sensed without requiring substantial compression, and should include interrupted retrieval / release / re-pickup sequences as distinct scenarios. Whether an LED should switch off during a brief drop, remain active for a chosen interval, or re-trigger on re-pickup is **unresolved** and needs an explicit behavior specification and trials. See [retrieval sensor evaluation](evaluations/EV008-light-grip-retrieval-sensing.md) for candidate technologies; no method has been validated.
+
 ## Dimensional and mass targets
 
 These figures were **supplied by the project owner on 2026-11-08**. They describe the physical reference and intended design limits; they are not independent measurements or validated prototype outcomes.
