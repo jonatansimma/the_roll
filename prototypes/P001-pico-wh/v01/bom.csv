@@ -1,0 +1,11 @@
+component,quantity,source,status,remarks
+Raspberry Pi Pico WH,1,Owner purchased,unverified,RP2040 3.3 V GPIO
+3 AA battery holder,1,Recycled toy,unverified,External bench use only
+AA alkaline cells,3,User supply not confirmed,proposed,Check type voltage polarity and mass
+Recycled LED lights,1 set,Recycled toy,unverified,Do not wire until circuit/rating identified
+Discrete LED,1,Spare or purchased,proposed,Low-current bring-up LED only
+Resistor 330 ohm 0.25 W,1,Spare or purchased,proposed,Example for one suitable red LED only
+Normally open pushbutton,1,Spare or purchased,proposed,Simulated mouth contact
+3.3 V capacitive digital touch breakout,1,To source optional,proposed,AT42QT1010 or comparable verified pin polarity/output
+Breadboard jumper wires,as needed,Spare or purchased,proposed,Off-dog only
+Battery switch and suitable protective fuse,1 each,Spare or purchased,proposed,Confirm ratings before wiring
