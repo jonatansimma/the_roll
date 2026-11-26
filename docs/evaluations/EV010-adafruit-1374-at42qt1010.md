@@ -1,6 +1,6 @@
 # EV010 — Adafruit 1374 AT42QT1010 capacitive touch breakout
 
-- **Status:** Researching — desk evaluation only; **not purchased, wired, measured, tested, selected, or approved for dog exposure**
+- **Status:** Researching — desk evaluation only; **not bench-tested, validated, selected as the final sensing solution, or approved for dog exposure**. Acquisition and experimental integration status: [P001-v02](../../prototypes/P001-pico-wh/v02/build.md)
 - **Problem / requirement IDs:** [REQ001–REQ003, REQ004–REQ006, REQ008–REQ009](../requirements.md#functional-and-practical-requirements)
 - **Author and date:** ChatGPT research, 2026-11-22
 - **Related evaluations:** [EV005 Pico WH](EV005-raspberry-pi-pico-wh.md), [EV008 light-grip approaches](EV008-light-grip-retrieval-sensing.md), [EV009 LIS3DH](EV009-electrokit-ekm029-lis3dh.md)
