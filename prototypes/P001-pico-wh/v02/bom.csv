@@ -1,0 +1,14 @@
+component,quantity,source,status,remarks
+Raspberry Pi Pico WH,1,Owner,owner reports purchased,Inspect actual board
+Adafruit 1374 AT42QT1010,1,Owner,owner reports purchased 2026-11-26,EV010; 3.3 V regulated; active high
+Electrokit EKM029 LIS3DH,1,Owner,owner reports purchased 2026-11-26,EV009; 3.3 V regulated; I2C
+3-AA holder,1,Recycled toy,owner reports available,External bench only; inspect
+AA alkaline cells,3,To confirm,proposed,External bench power
+3-AAA series holder and cells,1 set,To source,proposed,Candidate only; no fit or mass claim
+Recycled LED assembly,1,Recycled toy,owner reports available,Keep disconnected until characterized
+Known red LED,1,To confirm,proposed,Single bench LED
+330 ohm resistor,1,To confirm,proposed,For known red LED
+Breadboard and jumper wires,1 set,To confirm,proposed,Bench only
+Qwiic adapter or solder headers,1 set,To confirm,proposed,Choose one EKM029 supply route
+Rated switch and fuse,1 each,To confirm,proposed,Select after checking load and pack
+Insulating sheet and nonconductive fixture,1 set,To confirm,proposed,Off-dog test fixture
