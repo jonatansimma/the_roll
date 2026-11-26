@@ -1,6 +1,6 @@
 # EV009 — Electrokit EKM029 LIS3DH three-axis accelerometer breakout
 
-- **Status:** Researching — desk evaluation only; **not purchased, wired, measured, tested, selected, or approved for dog exposure**
+- **Status:** Researching — desk evaluation only; **not bench-tested, validated, selected as the final sensing solution, or approved for dog exposure**. Acquisition and experimental integration status: [P001-v02](../../prototypes/P001-pico-wh/v02/build.md)
 - **Problem / requirement IDs:** [REQ001–REQ003, REQ004–REQ006, REQ008–REQ009](../requirements.md#functional-and-practical-requirements)
 - **Author and date:** ChatGPT research, 2026-11-22
 - **Related evaluations:** [EV005 Pico WH](EV005-raspberry-pi-pico-wh.md), [EV007 Arduino Modulino Movement](EV007-arduino-modulino-movement.md), [EV008 light-grip approaches](EV008-light-grip-retrieval-sensing.md), [EV010 capacitive breakout](EV010-adafruit-1374-at42qt1010.md)
@@ -69,7 +69,7 @@ Investigate whether **Electrokit EKM029, fitted with STMicroelectronics LIS3DH**
 
 - **Assessment:** **Promising secondary sensor for controlled off-dog movement characterization; not validated as standalone retrieval detector.**
 - **Reasoning:** The I²C connection and power requirements fit a Pico WH test setup, and the low-current LIS3DH chip has relevant interrupt/FIFO capabilities. The fundamental risk is motion ambiguity, not supply voltage.
-- **Next action / decision link:** Buy/borrow and bench-log motion sequences, compare with [EV010](EV010-adafruit-1374-at42qt1010.md) only when data justify combining them, record results in [tests](../../tests/README.md), and register an actual selection (if any) in [decisions](../decisions.md). **No prototype selection or project requirement changes were made here.**
+- **Next action / decision link:** Bench-log motion sequences using the proposed [P001-v02 revision](../../prototypes/P001-pico-wh/v02/build.md), compare with [EV010](EV010-adafruit-1374-at42qt1010.md) only when data justify combining them, record results in [tests](../../tests/README.md), and register an actual selection (if any) in [decisions](../decisions.md). **No prototype selection or project requirement changes were made here.**
 
 ## References
 
