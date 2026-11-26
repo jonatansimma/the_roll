@@ -51,7 +51,7 @@ Source: [main.py](firmware/main.py); Pico W/WH MicroPython UF2, standard machine
 
 1. Inspect board markings, headers and polarity. With USB disconnected and no battery, check wiring and absence of shorts. Attach only the known test LED and AT42QT1010, then EKM029. Check rail at 3.3 V. Ensure sensor pad is untouched during power-on calibration.
 2. Start firmware with USB, battery disconnected. Verify sensor identity, CSV and indicator. Compare resting acceleration magnitude to approximately 1000 mg; rotate fixture and verify signed axes. Check touch, release and re-contact, including within and beyond the 500 ms hold.
-3. Run [planned comparative procedure](../../../tests/procedures/P001-v02-dual-sensor.md). For battery tests, load settings over USB, power off, disconnect USB, connect verified pack, and restart. Do not reconnect USB until pack disconnected. Record full firmware commit, settings and actual hardware for each run.
+3. Run [planned comparative procedure](../../../tests/procedures/TP001-dual-sensor-retrieval.md). For battery tests, load settings over USB, power off, disconnect USB, connect verified pack, and restart. Do not reconnect USB until pack disconnected. Record full firmware commit, settings and actual hardware for each run.
 4. Inspect actual mass/fit and recycled LED module separately; assess whole-system operating time with measured current and representative LED duty cycle. Later review whether motion adds discrimination and whether a different hardware revision is justified.
 
 ## Evidence and limitations
