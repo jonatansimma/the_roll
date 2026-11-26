@@ -1,0 +1,9 @@
+component,quantity,source,status,remarks
+Raspberry Pi Pico WH,1,Owner,owner reports purchased,Integrated green LED; Pico W MicroPython
+Adafruit 1374 AT42QT1010,1,Owner,owner reports purchased,3.3 V; digital OUT
+Electrokit EKM029 LIS3DH,1,Owner,owner reports purchased,3.3 V; I2C
+Micro-USB data cable,1,To confirm,required,USB power and serial data
+Breadboard,1,To confirm,required,Bench only
+Jumper wires,7,To confirm,required,Direct sensor connections; extra rail jumpers as needed
+Sensor headers or adapter,as needed,To confirm,conditional,Verify delivered hardware; Qwiic or header supply route
+Insulating sheet and rigid nonconductive fixture,1 set,To confirm,test equipment,Contact and motion experiments
