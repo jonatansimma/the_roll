@@ -39,7 +39,7 @@ try:
         if LOG_PATH in os.listdir():
             raise RuntimeError("Copy/remove previous CSV before capture")
         fs = os.statvfs(".")
-        if fs[0] * fs[3] < 256 * 1024:
+        if (fs[1] or fs[0]) * fs[4] < 256 * 1024:
             raise RuntimeError("Insufficient free space for CSV")
         log = open(LOG_PATH, "w")
         log.write(header)
